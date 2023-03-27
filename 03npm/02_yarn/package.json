@@ -1,0 +1,12 @@
+{
+  "name": "02_yarn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "serve": "node ./index.js"
+  },
+  "dependencies": {
+    "atguigu_zds": "^1.0.0"
+  }
+}
