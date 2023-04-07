@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>9000端口</div>
+    <script>
+      let div = document.querySelector('div')
+      div.onclick = function () {
+        ajax().then(v => {
+          console.log(v)
+        })
+      }
+      function ajax() {
+        return new Promise((resolve, reject) => {
+          const xhr = new XMLHttpRequest()
+          xhr.open('get', 'http://localhost:9999/get')
+
+          xhr.send()
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4) {
+              resolve(xhr.response)
+            }
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
